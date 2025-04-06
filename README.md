@@ -1,6 +1,6 @@
 # RomanNumbersKata - Ejemplo de memoria para la práctica de TDD
 
-Nombre de los alumnos: Michel Maes Bermejo e Iván Chicano Capelo
+Nombre de los alumnos: Beniamin Scrobota Campean
 
 ### Ejemplo 1
 
