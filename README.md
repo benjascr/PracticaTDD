@@ -4,21 +4,25 @@ Nombre de los alumnos: Beniamin Scrobota Campean
 
 ### Ejemplo 1
 
-**INPUT y OUTPUT**: 1 -> "I"
+**INPUT y OUTPUT**: "1" -> 1
 
 **EJ1. Código de test**
 ```java
 @Test
-public void testI() {
-    RomanConverter converter = new RomanConverter();
-    assertEquals("I", converter.convert(1));
+void parseSingleDigitNumber() {
+    assertEquals(1, calculatorParser.parse("1"));
 }
 ```
 
 **EJ1. Mensaje del test añadido que NO PASA**
 
 ```log
-org.opentest4j.AssertionFailedError: expected: [I] but was: []
+java.lang.UnsupportedOperationException: Not implemented yet
+	at es.codeurjc.test.CalculatorParser.parse(CalculatorParser.java:6)
+	at es.codeurjc.test.CalculatorParserTest.parseSingleDigitNumber(CalculatorParserTest.java:19)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ```
 
 **EJ1. Código mínimo para que el test pase**
@@ -26,8 +30,8 @@ org.opentest4j.AssertionFailedError: expected: [I] but was: []
 Describe brevemente el código mínimo implementado
 
 ```java
-public String convert(int number){
-    return "I";
+public int parse(String expression) {
+    return 1;
 }
 ```
 
