@@ -1,6 +1,6 @@
 # Práctica 3 - Desarrollo guiado por pruebas
 
-Nombre de los alumnos: Beniamin Scrobota Campean
+Nombre del alumno: Beniamin Scrobota Campean
 
 ### Ejemplo 1
 
@@ -116,7 +116,7 @@ public int parse(String expression) {
 	return Integer.parseInt(expression);
 }
 ```
-**EJ1. Captura de que TODOS los tests PASAN tras la refactorización**
+**EJ3. Captura de que TODOS los tests PASAN tras la refactorización**
 
 ![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
 
@@ -170,7 +170,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 5
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "2 + 3" -> 5
 
 **EJ5. Código de test**
 
@@ -209,7 +209,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 6
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "2 + 3 + 4" -> 9
 
 **EJ6. Código de test**
 
@@ -248,7 +248,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 7
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "1 + 2 + 3 + 4" -> 10
 
 **EJ7. Código de test**
 
@@ -287,7 +287,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 8
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "A" -> Invalid expression
 
 **EJ8. Código de test**
 
@@ -326,7 +326,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 9
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "B" -> Invalid expression
 
 **EJ9. Código de test**
 
@@ -365,7 +365,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 10
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "k" -> Invalid expression
 
 **EJ1. Código de test**
 
@@ -404,7 +404,7 @@ Justificar vuestra refactorización aquí.
 
 ### Ejemplo 11
 
-**INPUT y OUTPUT**: "1 + 1" -> 2
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
 
 **EJ11. Código de test**
 
