@@ -119,3 +119,324 @@ public int parse(String expression) {
 **EJ1. Captura de que TODOS los tests PASAN tras la refactorización**
 
 ![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 4
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ4. Código de test**
+
+```java
+@Test
+void parseSimpleAddition1() {
+    assertEquals(2, calculatorParser.parse("1 + 1"));
+}
+```
+
+**EJ4. Mensaje del test añadido que NO PASA**
+
+```log
+java.lang.NumberFormatException: For input string: "1 + 1"
+```
+
+**EJ4. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if(expression.length() > 1) {
+		String[] splittedExpression = expression.split(" ");
+		return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]);
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ4. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ4. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ4. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 5
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ5. Código de test**
+
+```java
+
+```
+
+**EJ5. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ5. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ5. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ5. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ5. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 6
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ6. Código de test**
+
+```java
+
+```
+
+**EJ6. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ6. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ6. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ6. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ6. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 7
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ7. Código de test**
+
+```java
+
+```
+
+**EJ7. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ7. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ7. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ7. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ7. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 8
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ8. Código de test**
+
+```java
+
+```
+
+**EJ8. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ8. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ8. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ8. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ8. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 9
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ9. Código de test**
+
+```java
+
+```
+
+**EJ9. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ9. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ9. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ9. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ9. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 10
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ1. Código de test**
+
+```java
+
+```
+
+**EJ10. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ10. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ10. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ10. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ10. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 11
+
+**INPUT y OUTPUT**: "1 + 1" -> 2
+
+**EJ11. Código de test**
+
+```java
+
+```
+
+**EJ11. Mensaje del test añadido que NO PASA**
+
+```log
+
+```
+
+**EJ11. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+
+```
+
+**EJ11. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ11. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+
+```
+**EJ11. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
