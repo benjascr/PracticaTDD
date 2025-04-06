@@ -145,9 +145,8 @@ Describe brevemente el código mínimo implementado
 
 ```java
 public int parse(String expression) {
-	if(expression.length() > 1) {
-		String[] splittedExpression = expression.split(" ");
-		return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]);
+	if(expression.equals("1 + 1")) {
+		return 1 + 1;
 	}
 	return Integer.parseInt(expression);
 }
@@ -157,17 +156,6 @@ public int parse(String expression) {
 
 AÑADIR CAPTURA
 
-**EJ4. Refactorización**
-
-Justificar vuestra refactorización aquí.
-
-```java
-
-```
-**EJ4. Captura de que TODOS los tests PASAN tras la refactorización**
-
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
-
 ### Ejemplo 5
 
 **INPUT y OUTPUT**: "2 + 3" -> 5
@@ -175,13 +163,16 @@ Justificar vuestra refactorización aquí.
 **EJ5. Código de test**
 
 ```java
-
+@Test
+void parseSimpleAddition2() {
+	assertEquals(5, calculatorParser.parse("2 + 3"));
+}
 ```
 
 **EJ5. Mensaje del test añadido que NO PASA**
 
 ```log
-
+java.lang.NumberFormatException: For input string: "2 + 3"
 ```
 
 **EJ5. Código mínimo para que el test pase**
@@ -189,7 +180,15 @@ Justificar vuestra refactorización aquí.
 Describe brevemente el código mínimo implementado
 
 ```java
-
+public int parse(String expression) {
+	if(expression.equals("1 + 1")) {
+		return 2;
+	}
+	if(expression.equals("2 + 3")) {
+		return 5;
+	}
+	return Integer.parseInt(expression);
+}
 ```
 
 **EJ5. Captura de que TODOS los test PASAN**
@@ -198,10 +197,16 @@ AÑADIR CAPTURA
 
 **EJ5. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se va a hacer una modificación para que se acepten cualquier par de valores y se haga la suma automáticamente.
 
 ```java
-
+public int parse(String expression) {
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]);
+	}
+	return Integer.parseInt(expression);
+}
 ```
 **EJ5. Captura de que TODOS los tests PASAN tras la refactorización**
 
@@ -214,13 +219,16 @@ Justificar vuestra refactorización aquí.
 **EJ6. Código de test**
 
 ```java
-
+@Test
+void parseSimpleAdditionThreeElements() {
+	assertEquals(9, calculatorParser.parse("2 + 3 + 4"));
+}
 ```
 
 **EJ6. Mensaje del test añadido que NO PASA**
 
 ```log
-
+org.opentest4j.AssertionFailedError: expected: <9> but was: <5>
 ```
 
 **EJ6. Código mínimo para que el test pase**
@@ -228,23 +236,21 @@ Justificar vuestra refactorización aquí.
 Describe brevemente el código mínimo implementado
 
 ```java
-
+public int parse(String expression) {
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		if(splittedExpression.length == 3) {
+			return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]);
+		}
+		return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]) + Integer.parseInt(splittedExpression[4]);
+	}
+	return Integer.parseInt(expression);
+}
 ```
 
 **EJ6. Captura de que TODOS los test PASAN**
 
 AÑADIR CAPTURA
-
-**EJ6. Refactorización**
-
-Justificar vuestra refactorización aquí.
-
-```java
-
-```
-**EJ6. Captura de que TODOS los tests PASAN tras la refactorización**
-
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
 
 ### Ejemplo 7
 
@@ -253,13 +259,16 @@ Justificar vuestra refactorización aquí.
 **EJ7. Código de test**
 
 ```java
-
+@Test
+void parseSimpleAdditionFourElements() {
+	assertEquals(10, calculatorParser.parse("1 + 2 + 3 + 4"));
+}
 ```
 
 **EJ7. Mensaje del test añadido que NO PASA**
 
 ```log
-
+org.opentest4j.AssertionFailedError: expected: <10> but was: <6>
 ```
 
 **EJ7. Código mínimo para que el test pase**
@@ -267,7 +276,19 @@ Justificar vuestra refactorización aquí.
 Describe brevemente el código mínimo implementado
 
 ```java
-
+public int parse(String expression) {
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		if(splittedExpression.length == 3) {
+			return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]);
+		}
+		if(splittedExpression.length == 5) {
+			return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]) + Integer.parseInt(splittedExpression[4]);
+		}
+		return Integer.parseInt(splittedExpression[0]) + Integer.parseInt(splittedExpression[2]) + Integer.parseInt(splittedExpression[4]) + Integer.parseInt(splittedExpression[6]);
+	}
+	return Integer.parseInt(expression);
+}
 ```
 
 **EJ7. Captura de que TODOS los test PASAN**
@@ -276,10 +297,21 @@ AÑADIR CAPTURA
 
 **EJ7. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se va a hacer una modificación para que se acepten cualquier numero de valores y se haga la suma automáticamente.
 
 ```java
-
+public int parse(String expression) {
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
 ```
 **EJ7. Captura de que TODOS los tests PASAN tras la refactorización**
 
