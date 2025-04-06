@@ -18,11 +18,6 @@ void parseSingleDigitNumber() {
 
 ```log
 java.lang.UnsupportedOperationException: Not implemented yet
-	at es.codeurjc.test.CalculatorParser.parse(CalculatorParser.java:6)
-	at es.codeurjc.test.CalculatorParserTest.parseSingleDigitNumber(CalculatorParserTest.java:19)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ```
 
 **EJ1. Código mínimo para que el test pase**
@@ -37,19 +32,90 @@ public int parse(String expression) {
 
 **EJ1. Captura de que TODOS los test PASAN**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+AÑADIR CAPTURA
 
-**EJ1. Refactorización**
-> [BORRAR]  Solo si se considera necesario
+### Ejemplo 2
+
+**INPUT y OUTPUT**: "2" -> 2
+
+**EJ2. Código de test**
+```java
+@Test
+void parseSingleDigitNumber2() {
+    assertEquals(2, calculatorParser.parse("2"));
+}
+```
+
+**EJ2. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
+```
+
+**EJ2. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+    if (expression.equals("1")) {
+        return 1;
+    }
+    return 2;
+}
+```
+
+**EJ2. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+### Ejemplo 3
+
+**INPUT y OUTPUT**: "3" -> 3
+
+**EJ3. Código de test**
+```java
+@Test
+void parseSingleDigitNumber2() {
+    assertEquals(3, calculatorParser.parse("3"));
+}
+```
+
+**EJ3. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: expected: <3> but was: <2>
+```
+
+**EJ3. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.equals("1")) {
+		return 1;
+	}
+	if (expression.equals("2")) {
+	        return 2;
+	}
+	return 3;
+}
+```
+
+**EJ3. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ3. Refactorización**
 
 Justificar vuestra refactorización aquí.
 
 ```java
-public String convert(int number){
-    return "I"; // Imaginemos que hemos refactorizado aquí
+public int parse(String expression) {
+	return Integer.parseInt(expression);
 }
 ```
 **EJ1. Captura de que TODOS los tests PASAN tras la refactorización**
-> [BORRAR]  Solo si se ha realizado una refactorización
 
 ![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
