@@ -1,4 +1,4 @@
-# RomanNumbersKata - Ejemplo de memoria para la práctica de TDD
+# Práctica 3 - Desarrollo guiado por pruebas
 
 Nombre de los alumnos: Beniamin Scrobota Campean
 
