@@ -324,13 +324,16 @@ public int parse(String expression) {
 **EJ8. Código de test**
 
 ```java
-
+@Test
+void parseInvalidExpressionLetterA() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("A"));
+}
 ```
 
 **EJ8. Mensaje del test añadido que NO PASA**
 
 ```log
-
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
 ```
 
 **EJ8. Código mínimo para que el test pase**
@@ -338,23 +341,26 @@ public int parse(String expression) {
 Describe brevemente el código mínimo implementado
 
 ```java
-
+public int parse(String expression) {
+	if(expression.equals("A")){
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
 ```
 
 **EJ8. Captura de que TODOS los test PASAN**
 
 AÑADIR CAPTURA
-
-**EJ8. Refactorización**
-
-Justificar vuestra refactorización aquí.
-
-```java
-
-```
-**EJ8. Captura de que TODOS los tests PASAN tras la refactorización**
-
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
 
 ### Ejemplo 9
 
