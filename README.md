@@ -568,14 +568,14 @@ public int parse(String expression) {
 
 ### Ejemplo 12
 
-**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+**INPUT y OUTPUT**: "1 + A" -> Invalid expression
 
 **EJ12. Código de test**
 
 ```java
 @Test
-void parseInvalidExpressionWord() {
-	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+void parseInvalidExpressionNumberPlusLetter() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("1 + A"));
 }
 ```
 
@@ -591,11 +591,18 @@ Describe brevemente el código mínimo implementado
 
 ```java
 public int parse(String expression) {
-	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
 		throw new IllegalArgumentException("Invalid expression");
 	}
-	if(expression.equals("HoLa")) {
-		throw new IllegalArgumentException("Invalid expression");
+	if (expression.equals("1 + A")) {
+	        throw new IllegalArgumentException("Invalid expression");
 	}
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
@@ -620,16 +627,7 @@ Justificar vuestra refactorización aquí.
 
 ```java
 public int parse(String expression) {
-	boolean allLetters = true;
-	for (int i = 0; i < expression.length(); i++) {
-		if (!Character.isLetter(expression.charAt(i))) {
-			allLetters = false;
-			break;
-		}
-	}
-	if (allLetters) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
+	checkIfHasLetter(expression);
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
 		int result = Integer.parseInt(splittedExpression[0]);
@@ -641,6 +639,20 @@ public int parse(String expression) {
 	}
 	return Integer.parseInt(expression);
 }
+
+private void checkIfHasLetter(String expression) {
+	boolean thereIsLetter = false;
+	for (int i = 0; i < expression.length(); i++) {
+		if (Character.isLetter(expression.charAt(i))) {
+			thereIsLetter = true;
+			break;
+	        }
+	}
+	if (thereIsLetter) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+}
+
 ```
 **EJ12. Captura de que TODOS los tests PASAN tras la refactorización**
 
@@ -648,21 +660,21 @@ public int parse(String expression) {
 
 ### Ejemplo 13
 
-**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+**INPUT y OUTPUT**: "5 - 3" -> 2
 
 **EJ13. Código de test**
 
 ```java
 @Test
-void parseInvalidExpressionWord() {
-	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+void parseSimpleSubstraction1() {
+	assertEquals(2, calculatorParser.parse("5 - 3"));
 }
 ```
 
 **EJ13. Mensaje del test añadido que NO PASA**
 
 ```log
-org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+org.opentest4j.AssertionFailedError: expected: <2> but was: <8>
 ```
 
 **EJ13. Código mínimo para que el test pase**
@@ -671,11 +683,9 @@ Describe brevemente el código mínimo implementado
 
 ```java
 public int parse(String expression) {
-	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
-	if(expression.equals("HoLa")) {
-		throw new IllegalArgumentException("Invalid expression");
+	checkIfHasLetter(expression);
+	if(expression.equals("5 - 3")) {
+		return 2;
 	}
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
@@ -694,55 +704,23 @@ public int parse(String expression) {
 
 AÑADIR CAPTURA
 
-**EJ13. Refactorización**
-
-Justificar vuestra refactorización aquí.
-
-```java
-public int parse(String expression) {
-	boolean allLetters = true;
-	for (int i = 0; i < expression.length(); i++) {
-		if (!Character.isLetter(expression.charAt(i))) {
-			allLetters = false;
-			break;
-		}
-	}
-	if (allLetters) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
-	if(expression.length() > 1) {
-		String [] splittedExpression = expression.split(" ");
-		int result = Integer.parseInt(splittedExpression[0]);
-		for (int i=0; i<splittedExpression.length-1; i++) {
-			result += Integer.parseInt(splittedExpression[i+2]);
-			i++;
-		}
-		return result;
-	}
-	return Integer.parseInt(expression);
-}
-```
-**EJ13. Captura de que TODOS los tests PASAN tras la refactorización**
-
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
-
 ### Ejemplo 14
 
-**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+**INPUT y OUTPUT**: "1 - 2" -> -1
 
 **EJ14. Código de test**
 
 ```java
 @Test
-void parseInvalidExpressionWord() {
-	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+void parseSimpleSubstraction2() {
+	assertEquals(-1, calculatorParser.parse("1 - 2"));
 }
 ```
 
 **EJ14. Mensaje del test añadido que NO PASA**
 
 ```log
-org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+org.opentest4j.AssertionFailedError: expected: <-1> but was: <3>
 ```
 
 **EJ14. Código mínimo para que el test pase**
@@ -751,11 +729,12 @@ Describe brevemente el código mínimo implementado
 
 ```java
 public int parse(String expression) {
-	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
-		throw new IllegalArgumentException("Invalid expression");
+	checkIfHasLetter(expression);
+	if(expression.equals("5 - 3")) {
+		return 2;
 	}
-	if(expression.equals("HoLa")) {
-		throw new IllegalArgumentException("Invalid expression");
+	if(expression.equals("1 - 2")) {
+		return -1;
 	}
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
@@ -780,19 +759,13 @@ Justificar vuestra refactorización aquí.
 
 ```java
 public int parse(String expression) {
-	boolean allLetters = true;
-	for (int i = 0; i < expression.length(); i++) {
-		if (!Character.isLetter(expression.charAt(i))) {
-			allLetters = false;
-			break;
-		}
-	}
-	if (allLetters) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
+	checkIfHasLetter(expression);
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
 		int result = Integer.parseInt(splittedExpression[0]);
+		if(splittedExpression[1].equals("-")) {
+			return Integer.parseInt(splittedExpression[0]) - Integer.parseInt(splittedExpression[2]);
+		}
 		for (int i=0; i<splittedExpression.length-1; i++) {
 			result += Integer.parseInt(splittedExpression[i+2]);
 			i++;
@@ -808,21 +781,21 @@ public int parse(String expression) {
 
 ### Ejemplo 15
 
-**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+**INPUT y OUTPUT**: "7 - 2 - 1" -> 4
 
 **EJ15. Código de test**
 
 ```java
 @Test
-void parseInvalidExpressionWord() {
-	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+void parseSimpleSubstraction3() {
+	assertEquals(4, calculatorParser.parse("7 - 2 - 1"));
 }
 ```
 
 **EJ15. Mensaje del test añadido que NO PASA**
 
 ```log
-org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+org.opentest4j.AssertionFailedError: expected: <4> but was: <5>
 ```
 
 **EJ15. Código mínimo para que el test pase**
