@@ -565,3 +565,723 @@ public int parse(String expression) {
 **EJ11. Captura de que TODOS los tests PASAN tras la refactorización**
 
 ![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 12
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ12. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ12. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ12. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ12. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ12. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ12. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 13
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ13. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ13. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ13. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ13. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ13. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ13. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 14
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ14. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ14. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ14. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ14. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ14. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ14. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 15
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ15. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ15. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ15. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ15. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ15. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ15. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 16
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ16. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ16. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ16. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ16. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ16. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ16. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 17
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ17. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ17. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ17. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ17. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ17. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ17. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 18
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ18. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ18. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ18. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ18. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ18. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ18. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 19
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ19. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ19. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ19. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ19. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ19. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ19. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+
+### Ejemplo 20
+
+**INPUT y OUTPUT**: "HoLa" -> Invalid expression
+
+**EJ20. Código de test**
+
+```java
+@Test
+void parseInvalidExpressionWord() {
+	assertThrowsExactly(IllegalArgumentException.class, () -> calculatorParser.parse("HoLa"));
+}
+```
+
+**EJ20. Mensaje del test añadido que NO PASA**
+
+```log
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NumberFormatException>
+```
+
+**EJ20. Código mínimo para que el test pase**
+
+Describe brevemente el código mínimo implementado
+
+```java
+public int parse(String expression) {
+	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.equals("HoLa")) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+
+**EJ20. Captura de que TODOS los test PASAN**
+
+AÑADIR CAPTURA
+
+**EJ20. Refactorización**
+
+Justificar vuestra refactorización aquí.
+
+```java
+public int parse(String expression) {
+	boolean allLetters = true;
+	for (int i = 0; i < expression.length(); i++) {
+		if (!Character.isLetter(expression.charAt(i))) {
+			allLetters = false;
+			break;
+		}
+	}
+	if (allLetters) {
+		throw new IllegalArgumentException("Invalid expression");
+	}
+	if(expression.length() > 1) {
+		String [] splittedExpression = expression.split(" ");
+		int result = Integer.parseInt(splittedExpression[0]);
+		for (int i=0; i<splittedExpression.length-1; i++) {
+			result += Integer.parseInt(splittedExpression[i+2]);
+			i++;
+		}
+		return result;
+	}
+	return Integer.parseInt(expression);
+}
+```
+**EJ20. Captura de que TODOS los tests PASAN tras la refactorización**
+
+![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
