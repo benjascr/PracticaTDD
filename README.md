@@ -804,15 +804,16 @@ Describe brevemente el código mínimo implementado
 
 ```java
 public int parse(String expression) {
-	if (expression.length() == 1 && Character.isLetter(expression.charAt(0))) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
-	if(expression.equals("HoLa")) {
-		throw new IllegalArgumentException("Invalid expression");
+	checkIfHasLetter(expression);
+	if(expression.equals("7 - 2 - 1")) {
+		return 4;
 	}
 	if(expression.length() > 1) {
 		String [] splittedExpression = expression.split(" ");
 		int result = Integer.parseInt(splittedExpression[0]);
+		if(splittedExpression[1].equals("-")) {
+			return Integer.parseInt(splittedExpression[0]) - Integer.parseInt(splittedExpression[2]);
+		}
 		for (int i=0; i<splittedExpression.length-1; i++) {
 			result += Integer.parseInt(splittedExpression[i+2]);
 			i++;
@@ -826,38 +827,6 @@ public int parse(String expression) {
 **EJ15. Captura de que TODOS los test PASAN**
 
 AÑADIR CAPTURA
-
-**EJ15. Refactorización**
-
-Justificar vuestra refactorización aquí.
-
-```java
-public int parse(String expression) {
-	boolean allLetters = true;
-	for (int i = 0; i < expression.length(); i++) {
-		if (!Character.isLetter(expression.charAt(i))) {
-			allLetters = false;
-			break;
-		}
-	}
-	if (allLetters) {
-		throw new IllegalArgumentException("Invalid expression");
-	}
-	if(expression.length() > 1) {
-		String [] splittedExpression = expression.split(" ");
-		int result = Integer.parseInt(splittedExpression[0]);
-		for (int i=0; i<splittedExpression.length-1; i++) {
-			result += Integer.parseInt(splittedExpression[i+2]);
-			i++;
-		}
-		return result;
-	}
-	return Integer.parseInt(expression);
-}
-```
-**EJ15. Captura de que TODOS los tests PASAN tras la refactorización**
-
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
 
 ### Ejemplo 16
 
