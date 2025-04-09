@@ -826,7 +826,7 @@ public int parse(String expression) {
 
 **EJ15. Captura de que TODOS los test PASAN**
 
-![Pasa](capturas/EJ14_PASA.png "Pasa")
+![Pasa](capturas/EJ15_PASA.png "Pasa")
 
 ### Ejemplo 16
 
@@ -909,7 +909,7 @@ public int parse(String expression) {
 ```
 **EJ16. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/EJ16_PASA.png "Pasa")
+![Pasa](capturas/EJ16_REFAC.png "Pasa")
 
 ### Ejemplo 17
 
