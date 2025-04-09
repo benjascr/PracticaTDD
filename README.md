@@ -22,7 +22,7 @@ java.lang.UnsupportedOperationException: Not implemented yet
 
 **EJ1. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha hecho que siempre se devuelva el valor 1.
 
 ```java
 public int parse(String expression) {
@@ -54,7 +54,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 
 **EJ2. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha dividido el método en dos casos, cuando la expresion es un 1 entonces se devuelve un 1 y en cualquier otro caso se devuelve un 2.
 
 ```java
 public int parse(String expression) {
@@ -89,7 +89,7 @@ org.opentest4j.AssertionFailedError: expected: <3> but was: <2>
 
 **EJ3. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha dividido el método en tres casos, cuando la expresion es un 1 entonces se devuelve un 1, cuando la expresion es un 2 se devuelve un 2 y en cualquier otro caso se devuelve un 3.
 
 ```java
 public int parse(String expression) {
@@ -109,7 +109,7 @@ public int parse(String expression) {
 
 **EJ3. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se ha hecho que se transforme siempre la expresion en un número, así no hay que dividir el código en varios subcasos diferentes.
 
 ```java
 public int parse(String expression) {
@@ -141,12 +141,12 @@ java.lang.NumberFormatException: For input string: "1 + 1"
 
 **EJ4. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha creado un caso específico para cuando la expresión es igual a "1 + 1", en cuyo caso se devolvería un 2.
 
 ```java
 public int parse(String expression) {
 	if(expression.equals("1 + 1")) {
-		return 1 + 1;
+		return 2;
 	}
 	return Integer.parseInt(expression);
 }
@@ -177,7 +177,7 @@ java.lang.NumberFormatException: For input string: "2 + 3"
 
 **EJ5. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha creado otro caso específico para cuando la expresión es igual a "2 + 3", en cuyo caso se devolvería un 5.
 
 ```java
 public int parse(String expression) {
@@ -197,7 +197,7 @@ public int parse(String expression) {
 
 **EJ5. Refactorización**
 
-Se va a hacer una modificación para que se acepten cualquier par de valores y se haga la suma automáticamente.
+Se va a hacer una modificación para que se acepten cualquier par de valores y se haga la suma automáticamente siempre que la expresión sea mayor a 1, es decir, siempre que haya más de un número.
 
 ```java
 public int parse(String expression) {
@@ -233,7 +233,7 @@ org.opentest4j.AssertionFailedError: expected: <9> but was: <5>
 
 **EJ6. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha dividido en dos casos según la longitud de la expresión, si es igual a 3, es decir, hay dos números y un símbolo "+" entonces se va a sumar el valor 0 y 2 del array. Si es mayor entonces se sumará también el valor 4 del array ya que habrá un tercer número.
 
 ```java
 public int parse(String expression) {
@@ -273,7 +273,7 @@ org.opentest4j.AssertionFailedError: expected: <10> but was: <6>
 
 **EJ7. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Lo mismo que antes pero añadiendo un caso adicional para tratar las expresiones con cuatro números.
 
 ```java
 public int parse(String expression) {
@@ -338,7 +338,7 @@ org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected:
 
 **EJ8. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una "A", en ese caso se lanza una excepción.
 
 ```java
 public int parse(String expression) {
@@ -383,7 +383,7 @@ org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected:
 
 **EJ9. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido otro caso específico para cuando la expresión es una "B", en ese caso se lanza una excepción.
 
 ```java
 public int parse(String expression) {
@@ -431,7 +431,7 @@ org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected:
 
 **EJ10. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un tercer caso específico para cuando la expresión es una "k", en ese caso se lanza una excepción.
 
 ```java
 public int parse(String expression) {
@@ -463,7 +463,7 @@ public int parse(String expression) {
 
 **EJ10. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se han unificado todos los casos anteriores en uno, siempre que se detecte una letra se lanzará una excepción.
 
 ```java
 public int parse(String expression) {
@@ -507,7 +507,7 @@ org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected:
 
 **EJ11. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es la palabra "HoLa", en ese caso se lanza una excepción.
 
 ```java
 public int parse(String expression) {
@@ -536,7 +536,7 @@ public int parse(String expression) {
 
 **EJ11. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se ha añadido una comprobación que comprueba si la expresión es una palabra, es decir, toos sus elementos son letras, en cuyo caso se lanza una eexcepción.  
 
 ```java
 public int parse(String expression) {
@@ -587,7 +587,7 @@ org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected:
 
 **EJ12. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es "1 + A", en ese caso se lanza una excepción.
 
 ```java
 public int parse(String expression) {
@@ -623,7 +623,7 @@ public int parse(String expression) {
 
 **EJ12. Refactorización**
 
-Justificar vuestra refactorización aquí.
+La comprobación anterior se ha metido en un método, y además se ha modificado, antes se comprobaba que todo fueran letras, ahora se comprueba que haya alguna letra, con que haya una ya se lanza la excepción.
 
 ```java
 public int parse(String expression) {
@@ -679,7 +679,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <8>
 
 **EJ13. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una resta "5 - 3", en ese caso devuelve un 2.
 
 ```java
 public int parse(String expression) {
@@ -725,7 +725,7 @@ org.opentest4j.AssertionFailedError: expected: <-1> but was: <3>
 
 **EJ14. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una resta "1 - 2", en ese caso devuelve un -1.
 
 ```java
 public int parse(String expression) {
@@ -755,7 +755,7 @@ public int parse(String expression) {
 
 **EJ14. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se ha añadido un caso donde se comprueba el valor 1 del array de la expresión splitteada, si es un "-" entonces se devolverá el resultado de la resta del valor de la posición 0 del array menos el valor de la posición 2.
 
 ```java
 public int parse(String expression) {
@@ -800,7 +800,7 @@ org.opentest4j.AssertionFailedError: expected: <4> but was: <5>
 
 **EJ15. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una resta "7 - 2 - 1", en ese caso devuelve un 4.
 
 ```java
 public int parse(String expression) {
@@ -850,7 +850,7 @@ org.opentest4j.AssertionFailedError: expected: <0> but was: <4>
 
 **EJ16. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una resta "9 - 5 - 3 - 1", en ese caso devuelve un 0.
 
 ```java
 public int parse(String expression) {
@@ -883,7 +883,7 @@ public int parse(String expression) {
 
 **EJ16. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se ha hecho que se acepten restas de más de dos números automáticamente, se comprueba si el primer signo es una resta y entonces se restan todos los números del array.
 
 ```java
 public int parse(String expression) {
@@ -920,7 +920,7 @@ public int parse(String expression) {
 ```java
 @Test
 void parseSimpleAdditionAndSubstraction1() {
-	assertEquals(3, calculatorParser.parse("7 + 1  - 5"));
+	assertEquals(3, calculatorParser.parse("7 + 1 - 5"));
 }
 ```
 
@@ -932,7 +932,7 @@ org.opentest4j.AssertionFailedError: expected: <3> but was: <13>
 
 **EJ17. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una suma y resta combinadas con los valores "7 + 1 - 5", en ese caso devuelve un 3.
 
 ```java
 public int parse(String expression) {
@@ -985,7 +985,7 @@ org.opentest4j.AssertionFailedError: expected: <8> but was: <0>
 
 **EJ18. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Se ha añadido un caso específico para cuando la expresión es una suma y resta combinadas con los valores "9 - 5 + 4", en ese caso devuelve un 8.
 
 ```java
 public int parse(String expression) {
@@ -1022,7 +1022,7 @@ public int parse(String expression) {
 
 **EJ18. Refactorización**
 
-Justificar vuestra refactorización aquí.
+Se ha hecho que se acepten sumas y restas de cualquier tipo y también la combinación de ambas, ya que ahora se recorrerá el array y se comprobará siempre el valor del signo, si es un "+" se sumará el siguiente número y si es un "-" se restará.
 
 ```java
 public int parse(String expression) {
@@ -1061,7 +1061,7 @@ void parseSimpleAdditionAndSubstraction2() {
 
 **EJ19. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Esta vez el test pasa correctamente ya que como se ha dicho antes ahora se aceptan sumas, restas y la combinación de ambas operaciones ya que en cada iteración se comprueba el signo de la operación. 
 
 **EJ19. Captura de que TODOS los test PASAN**
 
@@ -1082,7 +1082,7 @@ void parseSimpleAdditionAndSubstraction2() {
 
 **EJ20. Código mínimo para que el test pase**
 
-Describe brevemente el código mínimo implementado
+Esta vez el test pasa correctamente ya que como se ha dicho antes ahora se aceptan sumas, restas y la combinación de ambas operaciones ya que en cada iteración se comprueba el signo de la operación. 
 
 **EJ20. Captura de que TODOS los test PASAN**
 
