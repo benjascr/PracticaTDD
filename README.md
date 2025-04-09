@@ -826,7 +826,7 @@ public int parse(String expression) {
 
 **EJ15. Captura de que TODOS los test PASAN**
 
-![Pasa](capturas/EJ15_PASA.png "Pasa")
+![Pasa](capturas/EJ14_PASA.png "Pasa")
 
 ### Ejemplo 16
 
