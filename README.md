@@ -32,7 +32,7 @@ public int parse(String expression) {
 
 **EJ1. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ1_PASA.png "Pasa")
 
 ### Ejemplo 2
 
@@ -67,7 +67,7 @@ public int parse(String expression) {
 
 **EJ2. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ2_PASA.png "Pasa")
 
 ### Ejemplo 3
 
@@ -105,7 +105,7 @@ public int parse(String expression) {
 
 **EJ3. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ3_PASA.png "Pasa")
 
 **EJ3. Refactorización**
 
@@ -118,7 +118,7 @@ public int parse(String expression) {
 ```
 **EJ3. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ3_REFACT.png "Pasa")
 
 ### Ejemplo 4
 
@@ -154,7 +154,7 @@ public int parse(String expression) {
 
 **EJ4. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ4_PASA.png "Pasa")
 
 ### Ejemplo 5
 
@@ -193,7 +193,7 @@ public int parse(String expression) {
 
 **EJ5. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ5_PASA.png "Pasa")
 
 **EJ5. Refactorización**
 
@@ -210,7 +210,7 @@ public int parse(String expression) {
 ```
 **EJ5. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ5_REFAC.png "Pasa")
 
 ### Ejemplo 6
 
@@ -250,7 +250,7 @@ public int parse(String expression) {
 
 **EJ6. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ6_PASA.png "Pasa")
 
 ### Ejemplo 7
 
@@ -293,7 +293,7 @@ public int parse(String expression) {
 
 **EJ7. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ7_refact.png "Pasa")
 
 **EJ7. Refactorización**
 
@@ -315,7 +315,7 @@ public int parse(String expression) {
 ```
 **EJ7. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ7_refact.png "Pasa")
 
 ### Ejemplo 8
 
@@ -360,7 +360,7 @@ public int parse(String expression) {
 
 **EJ8. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ8_PASA.png "Pasa")
 
 ### Ejemplo 9
 
@@ -408,7 +408,7 @@ public int parse(String expression) {
 
 **EJ9. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ9_PASA.png "Pasa")
 
 ### Ejemplo 10
 
@@ -459,7 +459,7 @@ public int parse(String expression) {
 
 **EJ10. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ10_PASA.png "Pasa")
 
 **EJ10. Refactorización**
 
@@ -484,7 +484,7 @@ public int parse(String expression) {
 ```
 **EJ10. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ10_REFAC.png "Pasa")
 
 ### Ejemplo 11
 
@@ -532,7 +532,7 @@ public int parse(String expression) {
 
 **EJ11. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ11_PASA.png "Pasa")
 
 **EJ11. Refactorización**
 
@@ -564,7 +564,7 @@ public int parse(String expression) {
 ```
 **EJ11. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ11_REFAC.png "Pasa")
 
 ### Ejemplo 12
 
@@ -619,7 +619,7 @@ public int parse(String expression) {
 
 **EJ12. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ12_PASA.png "Pasa")
 
 **EJ12. Refactorización**
 
@@ -656,7 +656,7 @@ private void checkIfHasLetter(String expression) {
 ```
 **EJ12. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ12_REFAC.png "Pasa")
 
 ### Ejemplo 13
 
@@ -702,7 +702,7 @@ public int parse(String expression) {
 
 **EJ13. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ13_PASA.png "Pasa")
 
 ### Ejemplo 14
 
@@ -751,7 +751,7 @@ public int parse(String expression) {
 
 **EJ14. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ14_PASA.png "Pasa")
 
 **EJ14. Refactorización**
 
@@ -777,7 +777,7 @@ public int parse(String expression) {
 ```
 **EJ14. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ14_REFAC.png "Pasa")
 
 ### Ejemplo 15
 
@@ -826,7 +826,7 @@ public int parse(String expression) {
 
 **EJ15. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ15_PASA.png "Pasa")
 
 ### Ejemplo 16
 
@@ -879,7 +879,7 @@ public int parse(String expression) {
 
 **EJ16. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ16_PASA.png "Pasa")
 
 **EJ16. Refactorización**
 
@@ -909,7 +909,7 @@ public int parse(String expression) {
 ```
 **EJ16. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ16_PASA.png "Pasa")
 
 ### Ejemplo 17
 
@@ -962,7 +962,7 @@ public int parse(String expression) {
 
 **EJ17. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ17_PASA.png "Pasa")
 
 ### Ejemplo 18
 
@@ -1018,7 +1018,7 @@ public int parse(String expression) {
 
 **EJ18. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ18_PASA.png "Pasa")
 
 **EJ18. Refactorización**
 
@@ -1044,7 +1044,7 @@ public int parse(String expression) {
 ```
 **EJ18. Captura de que TODOS los tests PASAN tras la refactorización**
 
-![Pasa](capturas/Ejemplo_1_PASA.png "Pasa")
+![Pasa](capturas/EJ18_REFAC.png "Pasa")
 
 ### Ejemplo 19
 
@@ -1065,7 +1065,7 @@ Describe brevemente el código mínimo implementado
 
 **EJ19. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ19_PASA.png "Pasa")
 
 ### Ejemplo 20
 
@@ -1086,4 +1086,4 @@ Describe brevemente el código mínimo implementado
 
 **EJ20. Captura de que TODOS los test PASAN**
 
-AÑADIR CAPTURA
+![Pasa](capturas/EJ20_PASA.png "Pasa")
